@@ -1,16 +1,14 @@
 import requests
-from TOKEN import TOKEN_YA
-# from TOKEN import TOKEN_VK
-# from VK import VKPhotoBackuper
+from VK import VKPhotoBackuper
+from TOKEN import TOKEN_VK
+from TOKEN import user_id
 
 
 class YandexUploader:
-
     HOST = 'https://cloud-api.yandex.net:443'
 
-    def __init__(self, token, name):
-        self.token = TOKEN_YA
-        self.name = name
+    def __init__(self, token):
+        self.token = token
 
     def get_headers(self):
         return {'Content-Type': 'application/json', 'Authorization': f'OAuth {self.token}'}
@@ -34,7 +32,11 @@ class YandexUploader:
         response = requests.put(url=url, headers=self.get_headers(), params=params)
         return response.status_code
 
+    def get_photos_links_from_vk(self):
+        photo = VKPhotoBackuper(TOKEN_VK, user_id)
+        photo_links = photo.get_photo_info()
+        return photo_links
+
     def upload(self, path_to_file):
-        upload_link = self.get_upload_link(path_to_file)
-        response = requests.put(upload_link, headers=self.get_headers(), data=open(self.name, 'rb'))
-        print(response.status_code)
+        pass
+

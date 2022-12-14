@@ -46,14 +46,26 @@ class VKPhotoBackuper:
             res = elem['sizes']
             max_size = 0
             max_size_url = ''
-
+            max_size_type = ''
             for size in res:
                 if size['height'] >= max_size:
                     max_size = size['height']
                     max_size_url = size['url']
+                    max_size_type = size['type']
             if f"{elem['likes']['count']}.jpg" in photo_data.keys():
-                photo_data[f"{elem['likes']['count']}+{elem['date']}.jpg"] = max_size_url
+                photo_data[f"{elem['likes']['count']}+{elem['date']}.jpg"] = [max_size_url, max_size_type]
             else:
-                photo_data[f"{elem['likes']['count']}.jpg"] = max_size_url
+                photo_data[f"{elem['likes']['count']}.jpg"] = [max_size_url, max_size_type]
 
-        pprint(photo_data)
+        return photo_data
+
+    def save_info(self):
+
+        save_info_json = self.get_photo_info()
+        data = []
+
+        for key, value in save_info_json.items():
+            data_dict = {'file_name': key, 'size': value[1]}
+            data.append(data_dict)
+
+        return data
