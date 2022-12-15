@@ -1,5 +1,3 @@
-from pprint import pprint
-
 import requests
 from VK import VKPhotoBackuper
 from TOKEN import TOKEN_VK
