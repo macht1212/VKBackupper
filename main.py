@@ -11,6 +11,10 @@ token_ya = TOKEN_YA
 # info = VKPhotoBackuper(token_vk, user_id)
 #
 # pprint(info.save_info())
+# photo = VKPhotoBackuper(token_vk, user_id)
+# photo.get_photo_info()
+
 
 info = YandexUploader(TOKEN_YA)
-pprint(info.get_photos_links_from_vk())
+info.new_folder('pics from VK')
+info.upload('pics from VK')

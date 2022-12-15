@@ -17,7 +17,7 @@ Response includes First name, Last Name, age, sex, and other information about p
 
 ## **Attention!**
 
-Token is a **personal information!**  
+Token is **personal information!**  
 Please do not shear it!
 
 | Method     | Params         | Description                               |
@@ -31,7 +31,7 @@ Please do not shear it!
 get_photo_info
 ```
 Method returns data in JSON format. Includes photo's URL, size type and name of image.
-Name of image generated as count of likes. If counts are same, date in unicode added to likes.
+Name of image generated as count of likes. If counts are same, date in UNIX added to likes.
 
 | Method            | Params             | Description                                                                               |
 |:------------------|:-------------------|:------------------------------------------------------------------------------------------|

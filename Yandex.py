@@ -1,3 +1,5 @@
+from pprint import pprint
+
 import requests
 from VK import VKPhotoBackuper
 from TOKEN import TOKEN_VK
@@ -37,6 +39,26 @@ class YandexUploader:
         photo_links = photo.get_photo_info()
         return photo_links
 
-    def upload(self, path_to_file):
-        pass
+    def upload(self, folder):
+
+        uri = '/v1/disk/resources/upload'
+        url = self.HOST + uri
+
+        data = self.get_photos_links_from_vk()
+
+        for key, value in data.items():
+            file_name = key
+            url_link = value[0]
+
+            path_to_file = f'/{folder}/{file_name}'
+
+            params = {
+                'path': path_to_file,
+                'url': url_link,
+                'overwrite': 'true'
+            }
+
+            response = requests.post(url=url, headers=self.get_headers(), params=params)
+
+            return response.status_code
 

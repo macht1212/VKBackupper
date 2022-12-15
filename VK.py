@@ -1,5 +1,4 @@
 import requests
-# from main import *
 import time
 from pprint import pprint
 
@@ -20,8 +19,11 @@ class VKPhotoBackuper:
         response = requests.get(url, params=params)
 
         pprint(response.json())
+        time.sleep(1)
 
     def get_photo_info(self):
+
+        time.sleep(1)
 
         uri = 'photos.get'
         url = self.HOST + uri
@@ -61,6 +63,7 @@ class VKPhotoBackuper:
 
     def save_info(self):
 
+        time.sleep(1)
         save_info_json = self.get_photo_info()
         data = []
 
@@ -69,3 +72,5 @@ class VKPhotoBackuper:
             data.append(data_dict)
 
         return data
+
+
