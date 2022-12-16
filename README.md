@@ -43,6 +43,70 @@ Name of image generated as count of likes. If counts are same, date in UNIX adde
 |                   | `album_id`         | profile - photos from profile folder<br/>wall - photos from wall<br/>saved - saved folder |
 
 
+#### Saving data in JSON format
+```python
+save_info
+```
+
+
+| Method        | Params    | Description                                                    |
+|:--------------|:----------|:---------------------------------------------------------------|
+| `save_info`   | no params | method takes data from previous method and <br/> saved to JSON |
+
+
+### Yandex.Disc Class
+
+#### Get headers
+```python
+get_headers
+```
+
+Method returns headers for access to account.
+
+```python
+return {'Content-Type': "application/json", 'Authorization': f'OAuth {self.token}'}
+```
+
+#### Get upload link from Yandex API
+```python
+get_upload_link
+```
+
+
+| Method            | Params       | Description         |
+|:------------------|:-------------|:--------------------|
+| `get_upload_link` | `path`       | asked path to file  |
+
+#### Create a new folder in Ya.Disc
+```python
+new_folder
+```
+| Method            | Params      | Description         |
+|:------------------|:------------|:--------------------|
+| `get_upload_link` | `path`      | asked path to file  |
+|                   | `overwrite` |                     |
+
+#### Using VK Class to get links for upload
+```python
+get_photos_links_from_vk
+```
+
+| Method        | Params    | Description                        |
+|:--------------|:----------|:-----------------------------------|
+| `save_info`   | no params | method takes data from VK method   |
+
+
+#### Upload to Ya.Disc
+
+```python
+upload
+```
+| Method    | Params      | Description           |
+|:----------|:------------|:----------------------|
+| `upload`  | `path`      | asked path on Ya.Disc |
+|           | `url`       | asked URL of photo    |
+|           | `overwrite` |                       |
+
 
 ## Authors
 
