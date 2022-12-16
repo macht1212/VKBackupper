@@ -1,4 +1,4 @@
-![VKBackuper](img/VKBackuper.jpg)
+![VKBackuper](img/VKBackuper.jpg)  
 By Alexander Nazimov
 
 ## Programm Description
