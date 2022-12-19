@@ -32,19 +32,14 @@ class YandexUploader:
         response = requests.put(url=url, headers=self.get_headers(), params=params)
         return response.status_code
 
-    def get_photos_links_from_vk(self):
+    def upload(self, folder):
         photo = VKPhotoBackuper(TOKEN_VK, user_id)
         photo_links = photo.get_photo_info()
-        return photo_links
-
-    def upload(self, folder):
 
         uri = '/v1/disk/resources/upload'
         url = self.HOST + uri
 
-        data = self.get_photos_links_from_vk()
-
-        for key, value in data.items():
+        for key, value in photo_links.items():
             file_name = key
             url_link = value[0]
 
@@ -58,5 +53,4 @@ class YandexUploader:
 
             response = requests.post(url=url, headers=self.get_headers(), params=params)
 
-            return response.status_code
-
+            print(response.status_code)

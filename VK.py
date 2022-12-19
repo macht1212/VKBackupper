@@ -27,7 +27,6 @@ class VKPhotoBackuper:
 
         uri = 'photos.get'
         url = self.HOST + uri
-        urls_info = []
 
         params = {
             'access_token': self.token,
