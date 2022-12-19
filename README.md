@@ -124,7 +124,8 @@ Click on 'get OAuth-token' and copy.
 Use this information in main.py file.
 
 ## Authors
-
+### Realization
 - [@macht1212](https://github.com/macht1212)
+### Idea
 - Netology School
 
