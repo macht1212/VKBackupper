@@ -108,6 +108,21 @@ upload
 |           | `overwrite` |                       |
 
 
+## How it works
+You have to have accounts on VK.com and yandex.ru.  
+From VK you need your user ID (you can find it in settings of account) and token. 
+But get token is a bit harder than user ID.  
+
+From https://dev.vk.com go to My apps and create a new app (Standalone). 
+Memorize app ID and copy link https://oauth.vk.com/authorize?client_id={client_id}&scope=65536&response_type=token  
+Instead of {client_id} paste your app ID and browse it.
+Allow access to VK account and copy token from link.  
+
+Yandex token you can get here: https://yandex.ru/dev/disk/poligon/  
+Click on 'get OAuth-token' and copy.
+
+Use this information in main.py file.
+
 ## Authors
 
 - [@macht1212](https://github.com/macht1212)
