@@ -2,7 +2,7 @@
 /.idea
 /TOKEN.py
 /*.png
-/.env
+.env
 /VK/__pycache__
 /Yandex/__pycache__
 
