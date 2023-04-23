@@ -1,7 +1,13 @@
+import os
 import requests
-from VK import VKPhotoBackuper
-from TOKEN import TOKEN_VK
-from TOKEN import user_id
+from VK.VK import VKPhotoBackuper
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+TOKEN_VK = os.getenv('TOKEN_VK')
+user_id = os.getenv('USER_ID')
 
 
 class YandexUploader:

@@ -1,9 +1,10 @@
-from TOKEN import TOKEN_YA
-from TOKEN import TOKEN_VK
-from Yandex import YandexUploader
+import os
+from dotenv import load_dotenv
+from Yandex.Yandex import YandexUploader
 
-token_vk = TOKEN_VK
-token_ya = TOKEN_YA
+load_dotenv()
+
+TOKEN_YA = os.getenv('TOKEN_YA')
 
 info = YandexUploader(TOKEN_YA)
 info.new_folder('pics from VK')
